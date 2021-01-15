@@ -9,6 +9,6 @@
 // Highlighting for code blocks
 // import "prismjs/themes/prism.css"
 
-import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./src/scss/mdb/mdb.free.scss";
 import "./src/scss/mdb/bootstrap/bootstrap.scss";
