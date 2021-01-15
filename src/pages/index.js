@@ -1,22 +1,21 @@
 import * as React from "react";
 import Header from "../components/header";
-import Navbar from "../components/navbar";
-import IndexHeadingSign from "../contentComponents/indexHeadingSign";
+import IndexHeadingTexts from "../contentComponents/indexHeadingSign";
 import LocalLayout from "../components/localLayout";
 import IndexText from "../contentComponents/indexText";
 import IndexButtons from "../contentComponents/indexButtons";
+import Layout from "../components/layout";
 
 const IndexPage = ({ data }) => {
   const background = data.backgroundImage.childImageSharp.fluid;
   const face = data.face.childImageSharp.fluid;
 
   return (
-    <>
-      <Navbar />
+    <Layout>
       <Header
         background={background}
         face={face}
-        leftColumnContent={IndexHeadingSign}
+        leftColumnContent={IndexHeadingTexts}
       />
       <section>
         <div className="lead">
@@ -27,7 +26,7 @@ const IndexPage = ({ data }) => {
           />
         </div>
       </section>
-    </>
+    </Layout>
   );
 };
 

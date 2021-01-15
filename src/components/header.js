@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "gatsby-image";
 import BackgroundImg from "gatsby-background-image";
-import CardTalia from "./cardTalia";
+
 const Header = ({ leftColumnContent, background, face, alt }) => {
   const LeftColumnContent = leftColumnContent;
   return (
@@ -43,17 +43,34 @@ const Header = ({ leftColumnContent, background, face, alt }) => {
           <button type="button" className="btn btn-dark">
             <i class="fas fa-moon"></i>
           </button>
-
           <div className="d-flex flex-column">
-            <button type="button" className="btn btn-light">
+            <a
+              href={`mailto:urszulakrasny@gmail.com`}
+              type="button"
+              className="btn btn-light"
+              aria-label="Email"
+            >
               <i className="fas fa-envelope"></i>
-            </button>
-            <button type="button" className="btn btn-light mt-4">
+            </a>
+            <a
+              type="button"
+              target="blank"
+              className="btn btn-light mt-4"
+              href="tel:608 658 488"
+              rel="noopener noreferrer"
+              aria-label="Phone"
+            >
               <i className="fas fa-phone-square-alt"></i>
-            </button>
-            <button type="button" className="btn btn-light my-4">
+            </a>
+            <a
+              className="btn btn-light my-4"
+              href="https://www.facebook.com/ukrasny"
+              target="blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
               <i className="fab fa-facebook"></i>
-            </button>
+            </a>
           </div>
         </div>
       </div>

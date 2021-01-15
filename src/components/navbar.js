@@ -1,15 +1,16 @@
 import React from "react";
 import Logo from "./logo";
+import { Link } from "gatsby";
 
 const Navbar = () => (
   <div className="container">
-    <nav class="my-2 navbar navbar-expand-lg navbar-light bg-white bg-light shadow-none">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+    <nav className="my-2 navbar navbar-expand-lg navbar-light bg-white bg-light shadow-none">
+      <div className="container-fluid">
+        <Link className="navbar-brand" to="/">
           <Logo />
-        </a>
+        </Link>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -17,24 +18,50 @@ const Navbar = () => (
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <Link
+                className="nav-link"
+                // aria-current="page"
+                to="/"
+                activeStyle={{
+                  fontWeight: "bold",
+                  color: "black",
+                }}
+              >
                 Początek
-              </a>
+              </Link>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">
+            <li className="nav-item">
+              <Link
+                className="nav-link"
+                to="/publications"
+                tabindex="-1"
+                // aria-disabled="true"
+                activeStyle={{
+                  fontWeight: "bold",
+                  color: "black",
+                }}
+              >
                 Publikacje
-              </a>
+              </Link>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">
+            <li className="nav-item">
+              <Link
+                className="nav-link"
+                to="/contact"
+                tabindex="-1"
+                // aria-disabled="true"
+                activeStyle={{
+                  fontWeight: "bold",
+                  color: "black",
+                }}
+              >
                 Kontakt
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
