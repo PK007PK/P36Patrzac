@@ -1,6 +1,6 @@
 import * as React from "react";
 import Header from "../components/header";
-import IndexHeadingTexts from "../contentComponents/indexHeadingSign";
+import IndexHeadingTexts from "../contentComponents/indexHeadingTexts";
 import LocalLayout from "../components/localLayout";
 import IndexText from "../contentComponents/indexText";
 import IndexButtons from "../contentComponents/indexButtons";
