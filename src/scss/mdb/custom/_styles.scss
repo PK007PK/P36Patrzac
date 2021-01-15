@@ -1,4 +1,34 @@
-// Your custom variables
-.testClass {
-    color: red;
+// Custom variables
+
+// @import 
+
+
+.talia-card {
+    display: block;
+    background-color:black;
+    height: 300px;
+    width: 250px;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: flex-start;
+
+    &__icon {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-right: 10px;
+    }
+
+
+    &__sign {
+        font-size: 16px; 
+        margin-top: -2px;
+        line-height: 1;
+
+    }
 }

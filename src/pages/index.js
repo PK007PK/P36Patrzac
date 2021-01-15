@@ -1,72 +1,52 @@
 import * as React from "react";
+import Header from "../components/header";
+import IndexHeadingTexts from "../contentComponents/indexHeadingSign";
+import LocalLayout from "../components/localLayout";
+import IndexText from "../contentComponents/indexText";
+import IndexButtons from "../contentComponents/indexButtons";
+import Layout from "../components/layout";
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const background = data.backgroundImage.childImageSharp.fluid;
+  const face = data.face.childImageSharp.fluid;
+
   return (
-    <div class="container">
-      <p className="testClass">ddd</p>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown link
-              </a>
-              <ul
-                class="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li>
-                  <a class="dropdown-item" href="#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+    <Layout>
+      <Header
+        background={background}
+        face={face}
+        leftColumnContent={IndexHeadingTexts}
+      />
+      <section>
+        <div className="lead">
+          <LocalLayout
+            title={"W czym mogę Ci pomóc:"}
+            leftColumnContent={IndexText}
+            rightColumnContent={IndexButtons}
+          />
         </div>
-      </nav>
-      <div class="row">
-        <div class="col-md">
-          <div class="card">
-            <img
-              src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#!" class="btn btn-primary">
-                Button
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md">One of three columns</div>
-        <div class="col-md">One of three columns</div>
-      </div>
-    </div>
+      </section>
+    </Layout>
   );
 };
+
+export const pageQuery = graphql`
+  query {
+    backgroundImage: file(relativePath: { eq: "sun.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    face: file(relativePath: { eq: "ula2.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;
