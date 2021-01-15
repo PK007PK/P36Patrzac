@@ -1,30 +1,15 @@
 import React from "react";
+import Image from "gatsby-image";
+import logoSvg from "../../static/znak3.svg";
 
 const Logo = () => (
-  <div className="d-flex align-items-center">
-    {/* <div
-      style={{
-        width: "20px",
-        height: "40px",
-        backgroundColor: "#FFA900",
-        marginRight: "2px",
-        borderRadius: "40px 0 0 40px",
-      }}
-    ></div> */}
-    <div className="d-flex flex-column align-items-start">
-      <span
-        style={{
-          fontSize: "20px",
-          fontWeight: "bold",
-          textTransform: "uppercase",
-        }}
-      >
-        Patrząc w słońce
-      </span>
-      <span style={{ fontSize: "14px", marginTop: "-6px" }}>
-        Urszula Krasny
-      </span>
-    </div>
+  <div className="logo">
+    <i
+      className="logo__icon"
+      alt="logo"
+      style={{ backgroundImage: `url(${logoSvg})` }}
+    ></i>
+    <span className="logo__sign">Urszula Krasny</span>
   </div>
 );
 

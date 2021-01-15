@@ -7,12 +7,17 @@ import IndexText from "../contentComponents/indexText";
 import IndexButtons from "../contentComponents/indexButtons";
 
 const IndexPage = ({ data }) => {
-  const HeroImg = data.placeholderImage.childImageSharp.fluid;
+  const background = data.backgroundImage.childImageSharp.fluid;
+  const face = data.face.childImageSharp.fluid;
 
   return (
     <>
       <Navbar />
-      <Header img={HeroImg} leftColumnContent={IndexHeadingSign} />
+      <Header
+        background={background}
+        face={face}
+        leftColumnContent={IndexHeadingSign}
+      />
       <section>
         <div className="lead">
           <LocalLayout
@@ -28,9 +33,16 @@ const IndexPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query {
-    placeholderImage: file(relativePath: { eq: "sun.jpg" }) {
+    backgroundImage: file(relativePath: { eq: "sun.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    face: file(relativePath: { eq: "ula2.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
         }
       }

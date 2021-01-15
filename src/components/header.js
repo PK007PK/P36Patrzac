@@ -1,8 +1,8 @@
 import React from "react";
-
+import Image from "gatsby-image";
 import BackgroundImg from "gatsby-background-image";
-
-const Header = ({ leftColumnContent, img, alt }) => {
+import CardTalia from "./cardTalia";
+const Header = ({ leftColumnContent, background, face, alt }) => {
   const LeftColumnContent = leftColumnContent;
   return (
     <div class="container">
@@ -16,16 +16,34 @@ const Header = ({ leftColumnContent, img, alt }) => {
           <div className="card">
             <BackgroundImg
               style={{ height: "650px" }}
-              fluid={img}
+              fluid={background}
               alt={alt}
               Tag="div"
-            ></BackgroundImg>
+            >
+              <div
+                className="card bg-dark"
+                style={{
+                  height: "300px",
+                  width: "250px",
+                  position: "absolute",
+                  left: "-38px",
+                  bottom: "76px",
+                }}
+              >
+                <Image
+                  className="header-face"
+                  fluid={face}
+                  className="card-img"
+                />
+              </div>
+            </BackgroundImg>
           </div>
         </div>
-        <div className="col-sm-1 d-flex flex-column justify-content-between align-items-center">
+        <div className="col-sm-1 d-flex flex-column position-relative justify-content-between align-items-center">
           <button type="button" className="btn btn-dark">
             <i class="fas fa-moon"></i>
           </button>
+
           <div className="d-flex flex-column">
             <button type="button" className="btn btn-light">
               <i className="fas fa-envelope"></i>

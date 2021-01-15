@@ -28,7 +28,7 @@ const Navbar = () => (
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">
-                Blog
+                Publikacje
               </a>
             </li>
             <li class="nav-item">
