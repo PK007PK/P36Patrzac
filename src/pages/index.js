@@ -6,6 +6,7 @@ import LocalLayout from "../components/localLayout";
 import IndexText from "../contentComponents/indexText";
 import IndexButtons from "../contentComponents/indexButtons";
 import Layout from "../components/layout";
+import Logo from "../components/logo";
 
 const IndexPage = ({ data }) => {
   const background = data.backgroundImage.childImageSharp.fluid;
@@ -18,6 +19,9 @@ const IndexPage = ({ data }) => {
         face={face}
         leftColumnContent={IndexHeadingTexts}
       />
+      <div className="d-flex justify-content-center">
+        <Logo className="text-center" style={{ margin: "75px 0" }} />
+      </div>
       <section>
         <LocalLayout
           style={{ marginTop: "200px" }}
@@ -31,7 +35,7 @@ const IndexPage = ({ data }) => {
           )}
           rightColumnContent={() => (
             <>
-              <IndexButtons className="mb-2" />
+              <IndexButtons className="mb-3" />
               <IndexText />
             </>
           )}
