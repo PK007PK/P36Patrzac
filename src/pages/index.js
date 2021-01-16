@@ -1,4 +1,5 @@
 import * as React from "react";
+import Image from "gatsby-image";
 import Header from "../components/header";
 import IndexHeadingTexts from "../contentComponents/indexHeadingTexts";
 import LocalLayout from "../components/localLayout";
@@ -18,13 +19,23 @@ const IndexPage = ({ data }) => {
         leftColumnContent={IndexHeadingTexts}
       />
       <section>
-        <div className="lead">
-          <LocalLayout
-            title={"W czym mogę Ci pomóc:"}
-            leftColumnContent={IndexText}
-            rightColumnContent={IndexButtons}
-          />
-        </div>
+        <LocalLayout
+          style={{ marginTop: "200px" }}
+          className="my-5"
+          leftSize="3"
+          rightSize="6"
+          leftColumnContent={() => (
+            <div className="card">
+              <Image fluid={face} className="card-img" />
+            </div>
+          )}
+          rightColumnContent={() => (
+            <>
+              <IndexButtons className="mb-2" />
+              <IndexText />
+            </>
+          )}
+        />
       </section>
     </Layout>
   );
@@ -34,14 +45,14 @@ export const pageQuery = graphql`
   query {
     backgroundImage: file(relativePath: { eq: "sun.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 800) {
+        fluid(maxWidth: 354) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     face: file(relativePath: { eq: "ula2.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 500) {
+        fluid(maxWidth: 259) {
           ...GatsbyImageSharpFluid
         }
       }

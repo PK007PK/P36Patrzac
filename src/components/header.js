@@ -1,8 +1,8 @@
 import React from "react";
-import Image from "gatsby-image";
-import BackgroundImg from "gatsby-background-image";
 
-const Header = ({ leftColumnContent, background, face, alt }) => {
+import BackgroundImg from "gatsby-background-image";
+import LocalLayout from "../components/localLayout";
+const Header = ({ leftColumnContent, background, alt }) => {
   const LeftColumnContent = leftColumnContent;
   return (
     <div class="container">
@@ -19,24 +19,7 @@ const Header = ({ leftColumnContent, background, face, alt }) => {
               fluid={background}
               alt={alt}
               Tag="div"
-            >
-              <div
-                className="card bg-dark"
-                style={{
-                  height: "300px",
-                  width: "250px",
-                  position: "absolute",
-                  left: "-38px",
-                  bottom: "76px",
-                }}
-              >
-                <Image
-                  className="header-face"
-                  fluid={face}
-                  className="card-img"
-                />
-              </div>
-            </BackgroundImg>
+            ></BackgroundImg>
           </div>
         </div>
         <div className="col-sm-1 d-flex flex-column position-relative justify-content-between align-items-center">

@@ -1,11 +1,11 @@
 import React from "react";
-
-const IndexButtons = () => (
-  <div className="text-center">
+import Image from "gatsby-image";
+const IndexButtons = ({ face, className }) => (
+  <div className={"text-center btn-group w-100 ".concat(className)}>
     <div className="card">
       <div className="card-body">O mnie</div>
     </div>
-    <div className="card my-3">
+    <div className="card ">
       <div className="card-body">W czym mogę Ci pomóc...</div>
     </div>
     <div className="card">
