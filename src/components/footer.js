@@ -8,19 +8,20 @@ const Footer = () => (
         className="my-5"
         leftSize="3"
         rightSize="6"
-        leftColumnContent={() => (
-          <p className="copyryght">
-            &copy; Urszula Krasny {new Date().getFullYear()}
-          </p>
-        )}
+        leftColumnContent={() => <p>Polityka prywatności</p>}
         rightColumnContent={() => (
-          <a
-            href="https://krasny.netlify.app/programming"
-            target="blank"
-            className="text-end"
-          >
-            <p className="text-end">Realizacja: PK</p>
-          </a>
+          <div className="d-flex justify-content-end">
+            <div className="me-5">
+              &copy; Urszula Krasny {new Date().getFullYear()}
+            </div>
+            <a
+              href="https://krasny.netlify.app/programming"
+              target="blank"
+              style={{ color: "black" }}
+            >
+              <p className="d-inline-block ml-4">Realizacja: PK</p>
+            </a>
+          </div>
         )}
       />
     </div>

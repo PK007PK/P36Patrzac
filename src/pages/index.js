@@ -8,8 +8,8 @@ import Logo from "../components/logo";
 
 //Content
 import IndexHeadingTexts from "../contentComponents/indexHeadingTexts";
-import IndexText from "../contentComponents/indexText";
 import IndexButtons from "../contentComponents/indexButtons";
+import IndexHowICanHelp from "../contentComponents/indexHowICanHelp";
 import IndexTherapyDetails from "../contentComponents/indexTherapyDetails";
 import IndexAboutMe from "../contentComponents/indexAboutMe";
 
@@ -19,11 +19,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <Header
-        background={background}
-        face={face}
-        leftColumnContent={IndexHeadingTexts}
-      />
+      <Header background={background} leftColumnContent={IndexHeadingTexts} />
       <div className="d-flex justify-content-center">
         <Logo className="text-center" style={{ margin: "75px 0" }} />
       </div>
