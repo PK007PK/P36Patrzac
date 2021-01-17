@@ -1,12 +1,17 @@
-import * as React from "react";
+import React from "react";
 import Image from "gatsby-image";
+
+import Layout from "../components/layout";
 import Header from "../components/header";
-import IndexHeadingTexts from "../contentComponents/indexHeadingTexts";
 import LocalLayout from "../components/localLayout";
+import Logo from "../components/logo";
+
+//Content
+import IndexHeadingTexts from "../contentComponents/indexHeadingTexts";
 import IndexText from "../contentComponents/indexText";
 import IndexButtons from "../contentComponents/indexButtons";
-import Layout from "../components/layout";
-import Logo from "../components/logo";
+import IndexTherapyDetails from "../contentComponents/indexTherapyDetails";
+import IndexAboutMe from "../contentComponents/indexAboutMe";
 
 const IndexPage = ({ data }) => {
   const background = data.backgroundImage.childImageSharp.fluid;
@@ -24,21 +29,18 @@ const IndexPage = ({ data }) => {
       </div>
       <section>
         <LocalLayout
-          style={{ marginTop: "200px" }}
           className="my-5"
           leftSize="3"
           rightSize="6"
           leftColumnContent={() => (
-            <div className="card">
-              <Image fluid={face} className="card-img" />
-            </div>
-          )}
-          rightColumnContent={() => (
             <>
-              <IndexButtons className="mb-3" />
-              <IndexText />
+              <div className="card">
+                <Image fluid={face} className="card-img" />
+              </div>
+              <IndexButtons />
             </>
           )}
+          rightColumnContent={() => <IndexAboutMe />}
         />
       </section>
     </Layout>

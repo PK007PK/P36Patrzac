@@ -1,10 +1,12 @@
 import React from "react";
-import Image from "gatsby-image";
-const IndexButtons = ({ face, className }) => (
-  <div className={"text-center btn-group w-100 ".concat(className)}>
-    <button className="btn active">O mnie</button>
-    <button className="btn">W czym mogę Ci pomóc...</button>
-    <button className="btn">Terapia</button>
+
+const IndexButtons = ({ className }) => (
+  <div className={"text-center d-flex flex-column ".concat(className)}>
+    <button type="button" className="btn btn-dark">
+      O mnie
+    </button>
+    <button className="btn shadow-none">W czym mogę Ci pomóc...</button>
+    <button className="btn shadow-none">Terapia</button>
   </div>
 );
 
