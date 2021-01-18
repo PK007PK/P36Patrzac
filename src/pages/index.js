@@ -8,40 +8,68 @@ import Logo from "../components/logo";
 
 //Content
 import IndexHeadingTexts from "../contentComponents/indexHeadingTexts";
-import IndexButtons from "../contentComponents/indexButtons";
+import AllIndexButtons from "../contentComponents/allIndexButtons";
+import IndexAboutMe from "../contentComponents/indexAboutMe";
 import IndexHowICanHelp from "../contentComponents/indexHowICanHelp";
 import IndexTherapyDetails from "../contentComponents/indexTherapyDetails";
-import IndexAboutMe from "../contentComponents/indexAboutMe";
 
-const IndexPage = ({ data }) => {
-  const background = data.backgroundImage.childImageSharp.fluid;
-  const face = data.face.childImageSharp.fluid;
+//Data
+import { indexButtonsData } from "../data/indexButtonsData";
 
-  return (
-    <Layout>
-      <Header background={background} leftColumnContent={IndexHeadingTexts} />
-      <div className="d-flex justify-content-center">
-        <Logo className="text-center" style={{ margin: "75px 0" }} />
-      </div>
-      <section>
-        <LocalLayout
-          className="my-5"
-          leftSize="3"
-          rightSize="6"
-          leftColumnContent={() => (
-            <>
-              <div className="card">
-                <Image fluid={face} className="card-img" />
-              </div>
-              <IndexButtons />
-            </>
-          )}
-          rightColumnContent={() => <IndexAboutMe />}
-        />
-      </section>
-    </Layout>
-  );
-};
+class IndexPage extends React.Component {
+  state = { activeTxt: "about" };
+
+  handleButton = (id) => {
+    this.setState(() => ({ activeTxt: id }));
+  };
+
+  render() {
+    const background = this.props.data.backgroundImage.childImageSharp.fluid;
+    const face = this.props.data.face.childImageSharp.fluid;
+
+    const selectedContent = () => {
+      switch (this.state.activeTxt) {
+        case indexButtonsData[0].name:
+          return <IndexAboutMe />;
+        case indexButtonsData[1].name:
+          return <IndexHowICanHelp />;
+        case indexButtonsData[2].name:
+          return <IndexTherapyDetails />;
+        default:
+          return <IndexAboutMe />;
+      }
+    };
+
+    return (
+      <Layout>
+        <Header background={background} leftColumnContent={IndexHeadingTexts} />
+        <div className="d-flex justify-content-center">
+          <Logo className="text-center" style={{ margin: "75px 0" }} />
+        </div>
+        <section>
+          <LocalLayout
+            className="my-5"
+            leftSize="3"
+            rightSize="6"
+            leftColumnContent={() => (
+              <>
+                <div className="card">
+                  <Image fluid={face} className="card-img" />
+                </div>
+                <AllIndexButtons
+                  data={indexButtonsData}
+                  fn={this.handleButton}
+                  active={this.state.activeTxt}
+                />
+              </>
+            )}
+            rightColumnContent={selectedContent}
+          />
+        </section>
+      </Layout>
+    );
+  }
+}
 
 export const pageQuery = graphql`
   query {

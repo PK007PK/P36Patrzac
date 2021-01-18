@@ -3,6 +3,7 @@ import React from "react";
 const AboutMe = () => (
   <div className="card card-body">
     <div className="my-5">
+      <h3>O mnie</h3>
       <p>
         Nazywam się Urszula Krasny i jestem terapeutką, i counsellorką Gestalt
         oraz autorką Talii Ja-Ty. Współtworzę społeczność Klub Gestalt i

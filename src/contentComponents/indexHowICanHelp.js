@@ -13,13 +13,16 @@ const listing = [
 
 const IndexTextContent = () => (
   <div className="card card-body">
-    <ul className="list-unstyled d-flex flex-wrap my-5">
-      {listing.map((item, index) => (
-        <li className="mb-2" key={index}>
-          {item}
-        </li>
-      ))}
-    </ul>
+    <div className="my-5">
+      <h3>W czym mogę Ci pomóc...</h3>
+      <ul className="list-unstyled d-flex flex-wrap">
+        {listing.map((item, index) => (
+          <li className="mb-2" key={index}>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
   </div>
 );
 

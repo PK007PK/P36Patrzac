@@ -14,7 +14,7 @@ class Header extends React.Component {
         className="w-100 d-flex justify-content-center align-items-center"
         style={{ height: "650px" }}
       >
-        <i class="fas fa-poo fa-3x"></i>
+        <i class="far fa-smile fa-3x"></i>
       </div>
     );
     const LeftColumnContent = this.props.leftColumnContent;
@@ -37,6 +37,9 @@ class Header extends React.Component {
                   alt={this.props.alt}
                   Tag="div"
                 ></BackgroundImg>
+              )}
+              {this.state.isMounted && !this.props.background && (
+                <RightColumnContent />
               )}
             </div>
           </div>
