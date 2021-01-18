@@ -23,12 +23,12 @@ class Header extends React.Component {
     return (
       <div class="container">
         <div className="row justify-content-center">
-          <div className="col-sm-1 d-flex align-items-center"></div>
-          <div className="col-sm-5 d-flex align-items-center">
+          <div className="d-none d-lg-block col-lg-1"></div>
+          <div className="col-12 col-md-6 col-lg-5 d-flex align-items-center">
             {this.props.leftColumnContent && <LeftColumnContent />}
-          </div>{" "}
-          <div className="col-sm-1 d-flex align-items-center"></div>
-          <div className="col-sm-4">
+          </div>
+          <div className="d-none d-lg-block col-lg-1"></div>
+          <div className="col-12 col-md-6 col-lg-4">
             <div className="card">
               {!this.state.isMounted && <InitialIcon />}
               {this.state.isMounted && this.props.background && (
@@ -37,6 +37,7 @@ class Header extends React.Component {
                   fluid={this.props.background}
                   alt={this.props.alt}
                   Tag="div"
+                  className="header__img"
                 ></BackgroundImg>
               )}
               {this.state.isMounted && !this.props.background && (
@@ -44,11 +45,11 @@ class Header extends React.Component {
               )}
             </div>
           </div>
-          <div className="col-sm-1 d-flex flex-column position-relative justify-content-between align-items-center">
+          <div className="d-flex flex-lg-column col-12 col-lg-1 justify-content-between align-items-center">
             <button type="button" className="btn btn-dark">
               <i class="fas fa-moon"></i>
             </button>
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-lg-column align-items-center">
               <a
                 href={`mailto:urszulakrasny@gmail.com`}
                 type="button"
@@ -60,7 +61,7 @@ class Header extends React.Component {
               <a
                 type="button"
                 target="blank"
-                className="btn btn-light mt-4"
+                className="btn btn-light mt-lg-4"
                 href="tel:608 658 488"
                 rel="noopener noreferrer"
                 aria-label="Phone"

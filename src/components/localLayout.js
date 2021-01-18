@@ -14,15 +14,15 @@ const LocalLayout = ({
     <>
       <div className={"container ".concat(className)} style={style}>
         <div className="row">
-          <div className="col-sm-1"></div>
-          <div className={`col-sm-${leftSize || 5}`}>
+          <div className="d-none d-lg-block col-lg-1"></div>
+          <div className={`col-12 col-md-6 col-lg-${leftSize || 5}`}>
             {leftColumnContent && <LeftColumnContent />}
           </div>
-          <div className="col-sm-1"></div>
-          <div className={`col-sm-${rightSize || 4}`}>
+          <div className="d-none d-lg-block col-lg-1"></div>
+          <div className={`col-12 col-md-6 col-lg-${rightSize || 4}`}>
             {rightColumnContent && <RightColumnContent />}
           </div>
-          <div className="col-sm-1"></div>
+          <div className="d-none d-lg-block col-lg-1"></div>
         </div>
       </div>
     </>

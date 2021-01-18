@@ -36,3 +36,17 @@
 .indexDisplayCard {
     // min-height: 1000px;
 }
+
+.header {
+    &__img {
+        max-height: 650px;
+    }
+}
+
+.indexHeader {
+    &__title {
+        padding-top: 200px;
+        color: red;
+    }
+}
+
