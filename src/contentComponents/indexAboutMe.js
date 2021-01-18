@@ -1,7 +1,7 @@
 import React from "react";
 
 const AboutMe = () => (
-  <div className="card card-body">
+  <div className="card card-body indexDisplayCard">
     <div className="my-5">
       <h3>O mnie</h3>
       <p>

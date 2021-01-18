@@ -1,6 +1,6 @@
 import React from "react";
 
-const IndexHeadingSign = () => (
+const IndexHeadingTexts = () => (
   <div className="text-center">
     <h1 class="display-3 ">Patrząc w słońce</h1>
     <div className="border-bottom my-4"></div>
@@ -16,4 +16,4 @@ const IndexHeadingSign = () => (
   </div>
 );
 
-export default IndexHeadingSign;
+export default IndexHeadingTexts;

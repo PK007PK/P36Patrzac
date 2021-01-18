@@ -6,7 +6,7 @@ class Header extends React.Component {
   state = { isMounted: false };
 
   componentDidMount() {
-    setTimeout(() => this.setState({ isMounted: true }), 1000);
+    setTimeout(() => this.setState({ isMounted: true }), 500);
   }
   render() {
     const InitialIcon = () => (
@@ -19,6 +19,7 @@ class Header extends React.Component {
     );
     const LeftColumnContent = this.props.leftColumnContent;
     const RightColumnContent = this.props.rightColumnContent;
+
     return (
       <div class="container">
         <div className="row justify-content-center">

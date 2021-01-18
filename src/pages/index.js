@@ -17,7 +17,11 @@ import IndexTherapyDetails from "../contentComponents/indexTherapyDetails";
 import { indexButtonsData } from "../data/indexButtonsData";
 
 class IndexPage extends React.Component {
-  state = { activeTxt: "about" };
+  state = { isMounted: false, activeTxt: "O mnie" };
+
+  componentDidMount() {
+    setTimeout(() => this.setState({ isMounted: true }), 500);
+  }
 
   handleButton = (id) => {
     this.setState(() => ({ activeTxt: id }));
@@ -40,6 +44,15 @@ class IndexPage extends React.Component {
       }
     };
 
+    const InitialIcon = () => (
+      <div
+        className="w-100 d-flex justify-content-center align-items-center"
+        style={{ height: "315px" }}
+      >
+        <i class="far fa-smile fa-3x"></i>
+      </div>
+    );
+
     return (
       <Layout>
         <Header background={background} leftColumnContent={IndexHeadingTexts} />
@@ -54,7 +67,11 @@ class IndexPage extends React.Component {
             leftColumnContent={() => (
               <>
                 <div className="card">
-                  <Image fluid={face} className="card-img" />
+                  {this.state.isMounted ? (
+                    <Image fluid={face} className="card-img" />
+                  ) : (
+                    <InitialIcon />
+                  )}
                 </div>
                 <AllIndexButtons
                   data={indexButtonsData}

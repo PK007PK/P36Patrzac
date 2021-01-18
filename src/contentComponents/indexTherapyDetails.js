@@ -1,7 +1,7 @@
 import React from "react";
 
 const IndexTherapyDetails = () => (
-  <div className="card card-body">
+  <div className="card card-body indexDisplayCard">
     <div className="my-5">
       <h3>Terapia</h3>
       <p>Pracuję terapeutycznie w nurcie Gestalt w gabinecie w Krakowie.</p>

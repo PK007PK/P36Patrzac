@@ -12,7 +12,7 @@ const listing = [
 ];
 
 const IndexTextContent = () => (
-  <div className="card card-body">
+  <div className="card card-body indexDisplayCard">
     <div className="my-5">
       <h3>W czym mogę Ci pomóc...</h3>
       <ul className="list-unstyled d-flex flex-wrap">
