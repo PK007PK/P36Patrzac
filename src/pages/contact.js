@@ -6,8 +6,8 @@ import Header from "../components/header";
 import ContactDetails from "../contentComponents/contactDetails";
 import Map from "../contentComponents/map";
 
-const Contact = () => (
-  <Layout>
+const Contact = ({ location }) => (
+  <Layout dark={location && location.state && location.state.dark}>
     <Header rightColumnContent={Map} leftColumnContent={ContactDetails} />
   </Layout>
 );

@@ -7,7 +7,7 @@ const IndexHeadingTexts = () => (
     <p className="lead">
       Nazywam się Urszula Krasny i jestem terapeutką, i counsellorką Gestalt
       oraz autorką{" "}
-      <a href="https://taliajaty.pl/" target="blank" className="text-black">
+      <a href="https://taliajaty.pl/" target="blank" className="text-warinig">
         Talii Ja-Ty
       </a>
       . Prowadzę autorskie warsztaty na temat wstydu. Pracuję terapeutycznie w

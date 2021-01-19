@@ -1,4 +1,5 @@
 import React from "react";
+import { PageContext } from "../components/layout";
 
 const listing = [
   "w pracy ze stanami lękowymi i napięciowymi, z obniżonym nastrojem itd.,",
@@ -12,18 +13,28 @@ const listing = [
 ];
 
 const IndexTextContent = () => (
-  <div className="card card-body indexDisplayCard">
-    <div className="my-5">
-      <h3>W czym mogę Ci pomóc...</h3>
-      <ul className="list-unstyled d-flex flex-wrap">
-        {listing.map((item, index) => (
-          <li className="mb-2" key={index}>
-            {item}
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
+  <PageContext.Consumer>
+    {({ dark }) => (
+      <div
+        className={
+          dark
+            ? "card bg-dark card-body indexDisplayCard"
+            : "card card-body indexDisplayCard"
+        }
+      >
+        <div className="my-5">
+          <h3>W czym mogę Ci pomóc...</h3>
+          <ul className="list-unstyled d-flex flex-wrap">
+            {listing.map((item, index) => (
+              <li className="mb-2" key={index}>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    )}
+  </PageContext.Consumer>
 );
 
 export default IndexTextContent;

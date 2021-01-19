@@ -5,10 +5,10 @@ import Header from "../components/header";
 // Data
 import HeadingText from "../contentComponents/publicationsHeadingText";
 
-const Publications = ({ data }) => {
+const Publications = ({ data, location }) => {
   const background = data.backgroundImage.childImageSharp.fluid;
   return (
-    <Layout>
+    <Layout dark={location && location.state && location.state.dark}>
       <Header background={background} leftColumnContent={HeadingText} />
     </Layout>
   );

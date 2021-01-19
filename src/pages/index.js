@@ -54,7 +54,13 @@ class IndexPage extends React.Component {
     );
 
     return (
-      <Layout>
+      <Layout
+        dark={
+          this.props.location &&
+          this.props.location.state &&
+          this.props.location.state.dark
+        }
+      >
         <Header background={background} leftColumnContent={IndexHeadingTexts} />
         <div className="d-flex justify-content-center">
           <Logo className="text-center" style={{ margin: "75px 0" }} />
