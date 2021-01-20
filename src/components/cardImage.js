@@ -8,7 +8,7 @@ const CardImage = ({ fluid }) => (
     {({ dark }) => (
       <Image
         fluid={fluid}
-        className={dark ? "card bg-dark header__img" : "card header__img"}
+        // className={dark ? "bg-dark header__img" : "header__img"}
       />
     )}
   </PageContext.Consumer>

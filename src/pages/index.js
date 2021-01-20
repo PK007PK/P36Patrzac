@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from "gatsby-image";
 import Layout from "../components/layout";
 import Header from "../components/header";
 import LocalLayout from "../components/localLayout";
@@ -73,7 +73,7 @@ class IndexPage extends React.Component {
               <>
                 <div className="card">
                   {this.state.isMounted ? (
-                    <CardImage fluid={face} />
+                    <Image fluid={face} />
                   ) : (
                     <InitialIcon />
                   )}
