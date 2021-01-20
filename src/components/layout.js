@@ -29,6 +29,7 @@ class Layout extends React.Component {
           style={this.state.dark ? { color: "rgba(255,255,255,0.7" } : {}}
         >
           <Navbar />
+
           {children}
           <Footer />
         </div>

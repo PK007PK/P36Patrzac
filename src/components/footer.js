@@ -19,7 +19,7 @@ const Footer = () => (
             rightSize="6"
             leftColumnContent={() => <p>Polityka prywatności</p>}
             rightColumnContent={() => (
-              <div className="d-flex justify-content-end my-3">
+              <div className="d-flex justify-content-end">
                 <div className="me-5">
                   &copy; Urszula Krasny {new Date().getFullYear()}
                 </div>

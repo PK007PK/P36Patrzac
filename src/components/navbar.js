@@ -15,11 +15,17 @@ class Navbar extends React.Component {
       <PageContext.Consumer>
         {({ dark }) => (
           <div className={dark ? "container bg-dark" : "container bg-light"}>
+            <div
+              style={{ lineHeight: "0.1" }}
+              className={dark ? "text-dark" : "text-light"}
+            >
+              -
+            </div>
             <nav
               className={
                 dark
-                  ? "mb-2 navbar navbar-expand-lg navbar-dark text-white shadow-none"
-                  : "mb-2 navbar navbar-expand-lg navbar-light shadow-none"
+                  ? "mt-2 mb-2 navbar navbar-expand-lg navbar-dark text-white shadow-none"
+                  : "mt-2 mb-2 navbar navbar-expand-lg navbar-light shadow-none"
               }
             >
               <div className="container-fluid">

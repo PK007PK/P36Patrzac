@@ -22,18 +22,6 @@ const allIndexButtons = ({ className, style, data, fn, active }) => (
                 ? "not-active-dark btn btn-light mb-3"
                 : "not-active-not-dark btn mb-3"
             }
-            // className={item.name === !active && dark && "btn btn-light mb-3"}
-            // className={item.name === active && !dark && "btn btn-light mb-3"}
-            // className={item.name === !active && !dark && "btn btn-dark mb-3"}
-            // className={const abc =
-            //   if (item.name === active && dark) {
-            //     ("btn btn-dark mb-3");
-            //   } else if (item.name === !active && dark) {
-            //     ("btn btn-light mb-3");
-            //   } else if (item.name === active && !dark) {
-            //     ("btn btn-light mb-3");
-            //   } else "btn btn-dark mb-3";
-            // }
             onClick={fn && fn.bind(this, item.name)}
           >
             {item.name}
