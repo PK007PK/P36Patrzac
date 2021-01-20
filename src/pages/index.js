@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "gatsby-image";
+
 import Layout from "../components/layout";
 import Header from "../components/header";
 import LocalLayout from "../components/localLayout";
 import Logo from "../components/logo";
-import CardImage from "../components/cardImage";
+
 //Content
 import IndexHeadingTexts from "../contentComponents/indexHeadingTexts";
 import AllIndexButtons from "../contentComponents/allIndexButtons";
