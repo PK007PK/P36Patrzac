@@ -30,7 +30,7 @@ const Publications = ({ data, location }) => {
   }, []);
   const background = data.backgroundImage.childImageSharp.fluid;
   const library = data.libraryImage.childImageSharp.fluid;
-  const LibraryInfo = () => <Image fluid={library} />;
+  const LibraryInfo = ({ img }) => <Image fluid={img} />;
   return (
     <Layout dark={location && location.state && location.state.dark}>
       <Header background={background} leftColumnContent={HeadingText} />
@@ -63,7 +63,7 @@ const Publications = ({ data, location }) => {
               ))}
             </>
           )}
-          rightColumnContent={() => <p>sss</p>}
+          rightColumnContent={() => <Image fluid={library} />}
         />
       </div>
     </Layout>
