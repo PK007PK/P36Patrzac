@@ -7,7 +7,7 @@ const allIndexButtons = ({ className, style, data, fn, active }) => (
     {({ dark }) => (
       <div
         style={style}
-        className={"text-center d-flex mt-4 flex-column ".concat(className)}
+        className={"text-center w-100 btn-group ".concat(className)}
       >
         {data.map((item) => (
           <button
@@ -16,11 +16,11 @@ const allIndexButtons = ({ className, style, data, fn, active }) => (
             className={
               item.name === active
                 ? dark
-                  ? "active-and-dark btn btn-warning mb-3"
-                  : "active-and-not-dark btn btn-warning mb-3"
+                  ? "active-and-dark btn btn-sm btn-warning "
+                  : "active-and-not-dark btn btn-sm btn-dark "
                 : dark
-                ? "not-active-dark btn btn-light mb-3"
-                : "not-active-not-dark btn mb-3"
+                ? "not-active-dark btn btn-sm btn-light "
+                : "not-active-not-dark btn btn-sm "
             }
             onClick={fn && fn.bind(this, item.name)}
           >

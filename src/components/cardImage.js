@@ -6,10 +6,12 @@ import { PageContext } from "../components/layout";
 const CardImage = ({ fluid }) => (
   <PageContext.Consumer>
     {({ dark }) => (
-      <Image
-        fluid={fluid}
-        // className={dark ? "bg-dark header__img" : "header__img"}
-      />
+      <div className={dark ? "card bg-dark" : "card bg-light"}>
+        <Image
+          fluid={fluid}
+          className={dark ? "bg-dark header__img" : "bg-light header__img"}
+        />
+      </div>
     )}
   </PageContext.Consumer>
 );

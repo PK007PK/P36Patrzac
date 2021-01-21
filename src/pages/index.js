@@ -1,10 +1,9 @@
 import React from "react";
-import Image from "gatsby-image";
 
 import Layout from "../components/layout";
 import Header from "../components/header";
 import LocalLayout from "../components/localLayout";
-import Logo from "../components/logo";
+import Divider from "../contentComponents/divider";
 
 //Content
 import IndexHeadingTexts from "../contentComponents/indexHeadingTexts";
@@ -12,6 +11,8 @@ import AllIndexButtons from "../contentComponents/allIndexButtons";
 import IndexAboutMe from "../contentComponents/indexAboutMe";
 import IndexHowICanHelp from "../contentComponents/indexHowICanHelp";
 import IndexTherapyDetails from "../contentComponents/indexTherapyDetails";
+import CardLibrary from "../contentComponents/cardLibrary";
+import CardTalia from "../contentComponents/cardTalia";
 
 //Data
 import { indexButtonsData } from "../data/indexButtonsData";
@@ -29,9 +30,9 @@ class IndexPage extends React.Component {
 
   render() {
     const background = this.props.data.backgroundImage.childImageSharp.fluid;
-    const face = this.props.data.face.childImageSharp.fluid;
+    const library = this.props.data.libraryImage.childImageSharp.fluid;
 
-    const selectedContent = () => {
+    const SelectedContent = () => {
       switch (this.state.activeTxt) {
         case indexButtonsData[0].name:
           return <IndexAboutMe />;
@@ -44,15 +45,6 @@ class IndexPage extends React.Component {
       }
     };
 
-    const InitialIcon = () => (
-      <div
-        className="w-100 d-flex justify-content-center align-items-center"
-        style={{ height: "315px" }}
-      >
-        <i class="far fa-smile fa-3x"></i>
-      </div>
-    );
-
     return (
       <Layout
         dark={
@@ -62,33 +54,27 @@ class IndexPage extends React.Component {
         }
       >
         <Header background={background} leftColumnContent={IndexHeadingTexts} />
-        <div className="d-flex justify-content-center">
-          <Logo className="text-center" style={{ margin: "75px 0" }} />
-        </div>
-        <section>
-          <LocalLayout
-            className="my-5"
-            leftSize="3"
-            rightSize="6"
-            leftColumnContent={() => (
-              <>
-                <div className="card">
-                  {this.state.isMounted ? (
-                    <Image fluid={face} />
-                  ) : (
-                    <InitialIcon />
-                  )}
-                </div>
-                <AllIndexButtons
-                  data={indexButtonsData}
-                  fn={this.handleButton}
-                  active={this.state.activeTxt}
-                />
-              </>
-            )}
-            rightColumnContent={selectedContent}
-          />
-        </section>
+        <Divider />
+        <LocalLayout
+          leftSize="6"
+          rightSize="3"
+          leftColumnContent={() => (
+            <>
+              <AllIndexButtons
+                data={indexButtonsData}
+                fn={this.handleButton}
+                active={this.state.activeTxt}
+              />
+              <SelectedContent />
+            </>
+          )}
+          rightColumnContent={() => (
+            <>
+              <CardLibrary fluid={library} />
+              <CardTalia />
+            </>
+          )}
+        />
       </Layout>
     );
   }
@@ -106,6 +92,13 @@ export const pageQuery = graphql`
     face: file(relativePath: { eq: "ula2.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 259) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    libraryImage: file(relativePath: { eq: "library.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 354) {
           ...GatsbyImageSharpFluid
         }
       }

@@ -7,11 +7,12 @@ const LocalLayout = ({
   leftSize,
   style,
   className,
+  id,
 }) => {
   const LeftColumnContent = leftColumnContent;
   const RightColumnContent = rightColumnContent;
   return (
-    <>
+    <section id={id}>
       <div className={"container ".concat(className)} style={style}>
         <div className="row">
           <div className="d-none d-lg-block col-lg-1"></div>
@@ -25,7 +26,7 @@ const LocalLayout = ({
           <div className="d-none d-lg-block col-lg-1"></div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 export default LocalLayout;

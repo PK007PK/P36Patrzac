@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Image from "gatsby-image";
 
 import Layout from "../components/layout";
 import Header from "../components/header";
-import Logo from "../components/logo";
-
+import CardLibrary from "../contentComponents/cardLibrary";
 import LocalLayout from "../components/localLayout";
+import CardPost from "../components/cardPost";
+import Divider from "../contentComponents/divider";
 
 // Data
 import HeadingText from "../contentComponents/publicationsHeadingText";
@@ -30,42 +30,24 @@ const Publications = ({ data, location }) => {
   }, []);
   const background = data.backgroundImage.childImageSharp.fluid;
   const library = data.libraryImage.childImageSharp.fluid;
-  const LibraryInfo = ({ img }) => <Image fluid={img} />;
+
   return (
     <Layout dark={location && location.state && location.state.dark}>
       <Header background={background} leftColumnContent={HeadingText} />
-      <div className="container">
-        <div className="d-flex justify-content-center">
-          <Logo className="text-center" style={{ margin: "75px 0" }} />
-        </div>
-        <LocalLayout
-          className="my-5"
-          leftSize="5"
-          rightSize="4"
-          leftColumnContent={() => (
-            <>
-              {posts.map((post, index) => (
-                <div className="card w-100 mb-3" key={index}>
-                  <div className="card-body">
-                    <h3
-                      className="card-title"
-                      dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-                    ></h3>
-
-                    <p
-                      className="card-text"
-                      dangerouslySetInnerHTML={{
-                        __html: post.excerpt.rendered,
-                      }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </>
-          )}
-          rightColumnContent={() => <Image fluid={library} />}
-        />
-      </div>
+      <Divider />
+      <LocalLayout
+        className=""
+        leftSize="6"
+        rightSize="3"
+        leftColumnContent={() => (
+          <>
+            {posts.map((post, index) => (
+              <CardPost className="mb-5" post={post} key={index} />
+            ))}
+          </>
+        )}
+        rightColumnContent={() => <CardLibrary fluid={library} />}
+      />
     </Layout>
   );
 };

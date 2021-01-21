@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "./logo";
+import Logo from "../contentComponents/logo";
 import { Link } from "gatsby";
 
 import { PageContext } from "../components/layout";

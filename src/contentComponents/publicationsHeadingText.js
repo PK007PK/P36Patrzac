@@ -5,11 +5,12 @@ const PublicationsHeadingText = () => (
     <h1 class="display-3 ">Publikacje</h1>
     <div className="border-bottom my-4"></div>
     <p className="lead">
-      Tempor laborum Lorem ea occaecat est ad qui qui reprehenderit aliqua
-      mollit mollit in. Fugiat minim aliquip sunt aute excepteur nisi non
-      cupidatat quis. Quis ipsum minim aute id ad irure ea do duis ad. Aliquip
-      culpa duis cupidatat cupidatat. Anim est esse in consequat enim occaecat.
-      Laborum proident nisi pariatur laborum.
+      Ostatnio bardzo intensywnie pracuję nad projektem{" "}
+      <a href="http://bibliotekagestalt.pl/">BibliotekaGestalt.pl</a> - miejscem
+      stworzonym dla społeczności Gestalt po to, aby ułatwiać dostęp do wiedzy,
+      facylitować wymianę i inspirować do dyskusji merytorycznych (oraz żeby
+      mieć co czytać w busiku). Tam znajdziesz wszystkie moje teksty. Poniżej
+      przegląd najnowszych publikacji w bibliotece. Zapraszamy.
     </p>
   </div>
 );

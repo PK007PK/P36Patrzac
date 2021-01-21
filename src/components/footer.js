@@ -17,22 +17,23 @@ const Footer = () => (
             className=""
             leftSize="3"
             rightSize="6"
-            leftColumnContent={() => <p>Polityka prywatności</p>}
+            leftColumnContent={() => <p></p>}
             rightColumnContent={() => (
-              <div className="d-flex justify-content-end">
+              <div className="d-flex justify-content-end align-items-center my-3">
                 <div className="me-5">
                   &copy; Urszula Krasny {new Date().getFullYear()}
                 </div>
                 <a
                   href="https://krasny.netlify.app/programming"
                   target="blank"
+                  className="btn btn-sm"
                   style={
                     dark
                       ? { color: "rgba(255,255,255,0.7)" }
                       : { color: "black" }
                   }
                 >
-                  <p className="d-inline-block ml-4">Realizacja: PK</p>
+                  <i class="fas fa-check-double"></i> PK
                 </a>
               </div>
             )}
