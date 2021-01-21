@@ -15,7 +15,7 @@ const Publications = ({ data, location }) => {
   useEffect(() => {
     async function loadPosts() {
       const response = await fetch(
-        "http://bibliotekagestalt.pl/wp-json/wp/v2/posts"
+        "http://bibliotekagestalt.pl//wp-json/wp/v2/posts"
       );
       if (!response.ok) {
         // oups! something went wrong
@@ -29,8 +29,8 @@ const Publications = ({ data, location }) => {
     loadPosts();
   }, []);
   const background = data.backgroundImage.childImageSharp.fluid;
-  // const library = data.libraryImage.childImageSharp.fluid;
-  // const LibraryInfo = () => <Image fluid={library} />;
+  const library = data.libraryImage.childImageSharp.fluid;
+  const LibraryInfo = () => <Image fluid={library} />;
   return (
     <Layout dark={location && location.state && location.state.dark}>
       <Header background={background} leftColumnContent={HeadingText} />
@@ -79,13 +79,13 @@ export const pageQuery = graphql`
         }
       }
     }
-    # libraryImage: file(relativePath: { eq: "library.jpg" }) {
-    #   childImageSharp {
-    #     fluid(maxWidth: 354) {
-    #       ...GatsbyImageSharpFluid
-    #     }
-    #   }
-    # }
+    libraryImage: file(relativePath: { eq: "library.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 354) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `;
 
