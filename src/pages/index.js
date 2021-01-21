@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import Header from "../components/header";
 import LocalLayout from "../components/localLayout";
 import Divider from "../contentComponents/divider";
+import CardImage from "../components/cardImage";
 
 //Content
 import IndexHeadingTexts from "../contentComponents/indexHeadingTexts";
@@ -12,7 +13,7 @@ import IndexAboutMe from "../contentComponents/indexAboutMe";
 import IndexHowICanHelp from "../contentComponents/indexHowICanHelp";
 import IndexTherapyDetails from "../contentComponents/indexTherapyDetails";
 import CardLibrary from "../contentComponents/cardLibrary";
-import CardTalia from "../contentComponents/cardTalia";
+import Talia from "../contentComponents/cardTalia";
 
 //Data
 import { indexButtonsData } from "../data/indexButtonsData";
@@ -31,6 +32,7 @@ class IndexPage extends React.Component {
   render() {
     const background = this.props.data.backgroundImage.childImageSharp.fluid;
     const library = this.props.data.libraryImage.childImageSharp.fluid;
+    const face = this.props.data.face.childImageSharp.fluid;
 
     const SelectedContent = () => {
       switch (this.state.activeTxt) {
@@ -56,8 +58,8 @@ class IndexPage extends React.Component {
         <Header background={background} leftColumnContent={IndexHeadingTexts} />
         <Divider />
         <LocalLayout
-          leftSize="6"
-          rightSize="3"
+          leftSize="5"
+          rightSize="4"
           leftColumnContent={() => (
             <>
               <AllIndexButtons
@@ -70,8 +72,9 @@ class IndexPage extends React.Component {
           )}
           rightColumnContent={() => (
             <>
-              <CardLibrary fluid={library} />
-              <CardTalia />
+              <CardImage fluid={face} />
+              <CardLibrary style={{ margin: "50px 0" }} fluid={library} />
+              <Talia style={{ margin: "50px 0" }} />
             </>
           )}
         />

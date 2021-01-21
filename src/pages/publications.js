@@ -37,8 +37,8 @@ const Publications = ({ data, location }) => {
       <Divider />
       <LocalLayout
         className=""
-        leftSize="6"
-        rightSize="3"
+        leftSize="5"
+        rightSize="4"
         leftColumnContent={() => (
           <>
             {posts.map((post, index) => (

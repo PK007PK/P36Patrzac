@@ -4,10 +4,10 @@ import CardImage from "../components/cardImage";
 
 import { PageContext } from "../components/layout";
 
-const CardLibrary = ({ fluid }) => (
+const CardLibrary = ({ fluid, style }) => (
   <PageContext.Consumer>
     {({ dark }) => (
-      <div>
+      <div style={style}>
         <CardImage fluid={fluid} />
         <a
           href="http://bibliotekagestalt.pl/"
