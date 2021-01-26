@@ -58,16 +58,19 @@ class IndexPage extends React.Component {
         <Header background={background} leftColumnContent={IndexHeadingTexts} />
         <Divider />
         <LocalLayout
-          leftSize="5"
-          rightSize="4"
+          leftSize="6"
+          rightSize="3"
           leftColumnContent={() => (
             <>
-              <AllIndexButtons
+              {/* <AllIndexButtons
                 data={indexButtonsData}
                 fn={this.handleButton}
                 active={this.state.activeTxt}
               />
-              <SelectedContent />
+              <SelectedContent /> */}
+              <IndexAboutMe />
+              <IndexHowICanHelp />
+              <IndexTherapyDetails />
             </>
           )}
           rightColumnContent={() => (

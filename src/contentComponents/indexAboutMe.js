@@ -5,13 +5,13 @@ const AboutMe = () => (
   <PageContext.Consumer>
     {({ dark }) => (
       <div
-        className={
-          dark
-            ? "card bg-dark card-body indexDisplayCard"
-            : "card card-body indexDisplayCard"
-        }
+      // className={
+      //   dark
+      //     ? "card bg-dark card-body indexDisplayCard"
+      //     : "card card-body indexDisplayCard"
+      // }
       >
-        <div className="my-5">
+        <div className="">
           <h3>O mnie</h3>
           <p>
             Nazywam się Urszula Krasny i jestem terapeutką, i counsellorką

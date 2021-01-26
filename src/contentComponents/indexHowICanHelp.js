@@ -16,11 +16,11 @@ const IndexTextContent = () => (
   <PageContext.Consumer>
     {({ dark }) => (
       <div
-        className={
-          dark
-            ? "card bg-dark card-body indexDisplayCard"
-            : "card card-body indexDisplayCard"
-        }
+      // className={
+      //   dark
+      //     ? "card bg-dark card-body indexDisplayCard"
+      //     : "card card-body indexDisplayCard"
+      // }
       >
         <div className="my-5">
           <h3>W czym mogę Ci pomóc...</h3>

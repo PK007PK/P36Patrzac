@@ -5,11 +5,11 @@ const IndexTherapyDetails = () => (
   <PageContext.Consumer>
     {({ dark }) => (
       <div
-        className={
-          dark
-            ? "card bg-dark card-body indexDisplayCard"
-            : "card card-body indexDisplayCard"
-        }
+      // className={
+      //   dark
+      //     ? "card bg-dark card-body indexDisplayCard"
+      //     : "card card-body indexDisplayCard"
+      // }
       >
         <div className="my-5">
           <h3>Terapia</h3>

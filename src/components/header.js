@@ -25,7 +25,10 @@ class Header extends React.Component {
     return (
       <PageContext.Consumer>
         {({ dark, changeMode }) => (
-          <div class={dark ? "container bg-dark" : "container"}>
+          <div
+            class={dark ? "container bg-dark" : "container"}
+            style={this.props.style}
+          >
             <div className="row justify-content-center">
               <div className="d-none d-lg-block col-lg-1"></div>
               <div className="col-12 col-md-6 col-lg-5 d-flex align-items-center">
