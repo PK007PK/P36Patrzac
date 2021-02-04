@@ -61,8 +61,8 @@ const Header = ({
         <div className="col-12 col-md-6 col-lg-4">
           <div className={dark ? "card bg-dark" : "card"}>
             {initialIconComponent}
-            {isMounted && backgroundComponent}
             {isMounted && rightColumnContentComponent}
+            {isMounted && !rightColumnContentComponent && backgroundComponent}
           </div>
         </div>
         <div className="d-flex flex-lg-column col-12 col-lg-1 justify-content-between align-items-center">
