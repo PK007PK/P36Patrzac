@@ -11,6 +11,7 @@ const Talia = () => {
       href="https://taliajaty.pl/"
       target="blank"
       style={{ textDecoration: "none", color: "inherit" }}
+      rel="noopener noreferrer"
     >
       <div className={dark ? "card bg-dark" : "card"}>
         <div className={"talia"}>

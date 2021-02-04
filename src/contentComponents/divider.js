@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import Logo from "../contentComponents/logo";
 
 const Divider = ({ style }) => (
@@ -9,5 +11,9 @@ const Divider = ({ style }) => (
     />
   </div>
 );
+
+Divider.propTypes = {
+  style: PropTypes.object,
+};
 
 export default Divider;

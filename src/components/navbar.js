@@ -33,7 +33,7 @@ const Navbar = ({ location }) => {
                 state={{ dark: dark ? true : false }}
                 to="/"
               >
-                <Logo full />
+                <Logo withName />
               </Link>
               <button
                 onClick={handleButton}
