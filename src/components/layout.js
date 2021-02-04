@@ -1,41 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
 export const PageContext = React.createContext();
 
-class Layout extends React.Component {
-  state = {
+const Layout = ({ location, children, style }) => {
+  // state = {
+  //   dark: false,
+  //   changeMode: () => this.changeMode,
+  // };
+
+  const [state, setState] = useState({
     dark: false,
-    changeMode: () => this.changeMode,
+    changeMode: () => changeMode,
+  });
+
+  // componentDidMount() {
+  //   this.setState({ dark: this.props.dark === true ? true : false });
+  // }
+
+  const changeMode = () => {
+    setState((prevState) => ({ dark: !prevState.dark }));
   };
 
-  componentDidMount() {
-    this.setState({ dark: this.props.dark === true ? true : false });
-  }
+  const { dark } = state;
+  return (
+    <PageContext.Provider value={state}>
+      <div
+        className={dark ? "bg-dark" : "bg-light"}
+        style={dark ? { color: "rgba(255,255,255,0.7" } : {}}
+      >
+        <Navbar location={location} />
 
-  changeMode = () => {
-    this.setState((prevState) => ({ dark: !prevState.dark }));
-    console.log(this.state.dark);
-  };
-
-  render() {
-    const { children, style } = this.props;
-    return (
-      <PageContext.Provider value={this.state}>
-        <div
-          className={this.state.dark ? "bg-dark" : "bg-light"}
-          style={this.state.dark ? { color: "rgba(255,255,255,0.7" } : {}}
-        >
-          <Navbar location={this.props.location} />
-
-          {children}
-          <Footer />
-        </div>
-      </PageContext.Provider>
-    );
-  }
-}
+        {children}
+        <Footer />
+      </div>
+    </PageContext.Provider>
+  );
+};
 
 export default Layout;
