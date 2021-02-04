@@ -8,7 +8,7 @@ export const PageContext = React.createContext();
 const Layout = ({ location, children, isdark }) => {
   const [dark, setDark] = useState(false);
   // console.log(location);
-  useEffect(() => setDark(isdark === "true" ? true : false), []);
+  useEffect(() => setDark(isdark === true ? true : false), []);
 
   const changeMode = () => {
     setDark((prevState) => !prevState);

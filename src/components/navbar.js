@@ -28,7 +28,7 @@ const Navbar = () => {
         <div className="container-fluid">
           <Link
             className="navbar-brand"
-            isdark={dark ? "true" : "false"}
+            state={{ isdark: dark ? true : false }}
             to="/"
           >
             <Logo withName />
@@ -57,7 +57,7 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  isdark={dark ? "true" : "false"}
+                  state={{ isdark: dark ? true : false }}
                   to="/"
                   activeStyle={
                     dark
@@ -79,7 +79,7 @@ const Navbar = () => {
                   className="nav-link"
                   to="/publications"
                   tabIndex="-1"
-                  isdark={dark ? "true" : "false"}
+                  state={{ isdark: dark ? true : false }}
                   activeStyle={
                     dark
                       ? {
@@ -100,7 +100,7 @@ const Navbar = () => {
                   className="nav-link"
                   to="/contact"
                   tabIndex="-1"
-                  isdark={dark ? "true" : "false"}
+                  state={{ isdark: dark ? true : false }}
                   activeStyle={
                     dark
                       ? {
