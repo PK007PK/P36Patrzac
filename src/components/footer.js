@@ -15,34 +15,18 @@ const Footer = () => (
         <div className="container">
           <LocalLayout
             className="mt-5"
-            leftSize="3"
-            rightSize="6"
+            leftSize="6"
+            rightSize="3"
             leftColumnContent={() => (
-              <div className="my-3">
-                <a
-                  href="tel:608 658 488"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  Tel. 608658488
-                </a>
-                ,{" "}
-                <a
-                  href="mailto:urszulakrasny@gmail.com"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  urszulakrasny@gmail.com
-                </a>
+              <div className="d-flex justify-content-center justify-content-md-start align-items-center my-3">
+                &copy; Urszula Krasny {new Date().getFullYear()}
               </div>
             )}
             rightColumnContent={() => (
-              <div className="d-flex justify-content-end align-items-center my-3">
-                <div className="me-5">
-                  &copy; Urszula Krasny {new Date().getFullYear()}
-                </div>
+              <div className="d-flex justify-content-center justify-content-md-end align-items-center my-3">
                 <a
                   href="https://krasny.netlify.app/programming"
                   target="blank"
-                  // className="btn btn-sm"
                   style={
                     dark
                       ? {
@@ -52,7 +36,7 @@ const Footer = () => (
                       : { color: "black", textDecoration: "none" }
                   }
                 >
-                  <i class="fas fa-check-double"></i> PK
+                  <i className="fas fa-check-double"></i> PK
                 </a>
               </div>
             )}

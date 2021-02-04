@@ -5,86 +5,50 @@ import Header from "../components/header";
 import LocalLayout from "../components/localLayout";
 import Divider from "../contentComponents/divider";
 import CardImage from "../components/cardImage";
+import SEO from "../components/seo";
 
 //Content
 import IndexHeadingTexts from "../contentComponents/indexHeadingTexts";
-import AllIndexButtons from "../contentComponents/allIndexButtons";
 import IndexAboutMe from "../contentComponents/indexAboutMe";
 import IndexHowICanHelp from "../contentComponents/indexHowICanHelp";
 import IndexTherapyDetails from "../contentComponents/indexTherapyDetails";
 import CardLibrary from "../contentComponents/cardLibrary";
 import Talia from "../contentComponents/cardTalia";
 
-//Data
-import { indexButtonsData } from "../data/indexButtonsData";
+const IndexPage = ({ data, location }) => {
+  const background = data.backgroundImage.childImageSharp.fluid;
+  const library = data.libraryImage.childImageSharp.fluid;
+  const face = data.face.childImageSharp.fluid;
 
-class IndexPage extends React.Component {
-  state = { isMounted: false, activeTxt: "O mnie" };
-
-  componentDidMount() {
-    setTimeout(() => this.setState({ isMounted: true }), 500);
-  }
-
-  handleButton = (id) => {
-    this.setState(() => ({ activeTxt: id }));
-  };
-
-  render() {
-    const background = this.props.data.backgroundImage.childImageSharp.fluid;
-    const library = this.props.data.libraryImage.childImageSharp.fluid;
-    const face = this.props.data.face.childImageSharp.fluid;
-
-    const SelectedContent = () => {
-      switch (this.state.activeTxt) {
-        case indexButtonsData[0].name:
-          return <IndexAboutMe />;
-        case indexButtonsData[1].name:
-          return <IndexHowICanHelp />;
-        case indexButtonsData[2].name:
-          return <IndexTherapyDetails />;
-        default:
-          return <IndexAboutMe />;
-      }
-    };
-
-    return (
-      <Layout
-        dark={
-          this.props.location &&
-          this.props.location.state &&
-          this.props.location.state.dark
-        }
-      >
-        <Header background={background} leftColumnContent={IndexHeadingTexts} />
-        <Divider />
-        <LocalLayout
-          leftSize="6"
-          rightSize="3"
-          leftColumnContent={() => (
-            <>
-              {/* <AllIndexButtons
-                data={indexButtonsData}
-                fn={this.handleButton}
-                active={this.state.activeTxt}
-              />
-              <SelectedContent /> */}
-              <IndexAboutMe />
-              <IndexHowICanHelp />
-              <IndexTherapyDetails />
-            </>
-          )}
-          rightColumnContent={() => (
-            <>
-              <CardImage fluid={face} />
-              <CardLibrary style={{ margin: "50px 0" }} fluid={library} />
-              <Talia style={{ margin: "50px 0" }} />
-            </>
-          )}
-        />
-      </Layout>
-    );
-  }
-}
+  return (
+    <Layout
+      dark={location && location.state && location.state.dark}
+      location={location}
+    >
+      <SEO title="Strona Główna" lang="pl" />
+      <Header background={background} leftColumnContent={IndexHeadingTexts} />
+      <Divider />
+      <LocalLayout
+        leftSize="6"
+        rightSize="3"
+        leftColumnContent={() => (
+          <>
+            <IndexAboutMe />
+            <IndexHowICanHelp />
+            <IndexTherapyDetails />
+          </>
+        )}
+        rightColumnContent={() => (
+          <>
+            <CardImage fluid={face} alt="Urszula Krasny" />
+            <CardLibrary style={{ margin: "50px 0" }} fluid={library} />
+            <Talia style={{ margin: "50px 0" }} />
+          </>
+        )}
+      />
+    </Layout>
+  );
+};
 
 export const pageQuery = graphql`
   query {

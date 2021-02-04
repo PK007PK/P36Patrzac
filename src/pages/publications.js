@@ -6,7 +6,7 @@ import CardLibrary from "../contentComponents/cardLibrary";
 import LocalLayout from "../components/localLayout";
 import CardPost from "../components/cardPost";
 import Divider from "../contentComponents/divider";
-
+import SEO from "../components/seo";
 // Data
 import HeadingText from "../contentComponents/publicationsHeadingText";
 
@@ -18,7 +18,6 @@ const Publications = ({ data, location }) => {
         "http://bibliotekagestalt.pl//wp-json/wp/v2/posts"
       );
       if (!response.ok) {
-        // oups! something went wrong
         return;
       }
 
@@ -32,7 +31,12 @@ const Publications = ({ data, location }) => {
   const library = data.libraryImage.childImageSharp.fluid;
 
   return (
-    <Layout dark={location && location.state && location.state.dark}>
+    <Layout
+      dark={location && location.state && location.state.dark}
+      location={location}
+    >
+      {" "}
+      <SEO title="Publikacje" lang="pl" />
       <Header background={background} leftColumnContent={HeadingText} />
       <Divider />
       <LocalLayout

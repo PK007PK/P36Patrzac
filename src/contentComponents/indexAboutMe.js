@@ -12,7 +12,7 @@ const AboutMe = () => (
       // }
       >
         <div className="">
-          <h3>O mnie</h3>
+          <h2>O mnie</h2>
           <p>
             Nazywam się Urszula Krasny i jestem terapeutką, i counsellorką
             Gestalt oraz autorką Talii Ja-Ty. Współtworzę społeczność Klub

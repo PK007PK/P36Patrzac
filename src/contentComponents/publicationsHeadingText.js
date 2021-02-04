@@ -2,7 +2,7 @@ import React from "react";
 
 const PublicationsHeadingText = () => (
   <div className="text-center">
-    <h1 class="display-3 ">Publikacje</h1>
+    <h1 className="display-3 ">Publikacje</h1>
     <div className="border-bottom my-4"></div>
     <p className="lead">
       Ostatnio bardzo intensywnie pracuję nad projektem{" "}

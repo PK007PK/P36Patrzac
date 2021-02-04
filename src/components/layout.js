@@ -28,7 +28,7 @@ class Layout extends React.Component {
           className={this.state.dark ? "bg-dark" : "bg-light"}
           style={this.state.dark ? { color: "rgba(255,255,255,0.7" } : {}}
         >
-          <Navbar />
+          <Navbar location={this.props.location} />
 
           {children}
           <Footer />

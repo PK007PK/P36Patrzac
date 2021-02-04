@@ -16,7 +16,7 @@ class Header extends React.Component {
         className="w-100 d-flex justify-content-center align-items-center"
         style={{ height: "650px" }}
       >
-        <i class="far fa-smile fa-3x"></i>
+        <i className="far fa-smile fa-3x"></i>
       </div>
     );
     const LeftColumnContent = this.props.leftColumnContent;
@@ -26,7 +26,7 @@ class Header extends React.Component {
       <PageContext.Consumer>
         {({ dark, changeMode }) => (
           <div
-            class={dark ? "container bg-dark" : "container"}
+            className={dark ? "container bg-dark" : "container"}
             style={this.props.style}
           >
             <div className="row justify-content-center">
@@ -54,14 +54,15 @@ class Header extends React.Component {
               </div>
               <div className="d-flex flex-lg-column col-12 col-lg-1 justify-content-between align-items-center">
                 <button
+                  aria-label="Przełącznik jasny / ciemny motyw"
                   type="button"
                   className={dark ? "btn btn-warning" : "btn btn-dark"}
                   onClick={changeMode()}
                 >
                   {dark ? (
-                    <i class="fas fa-sun"></i>
+                    <i className="fas fa-sun"></i>
                   ) : (
-                    <i class="fas fa-moon"></i>
+                    <i className="fas fa-moon"></i>
                   )}
                 </button>
                 <div className="d-flex flex-lg-column align-items-center">
@@ -69,17 +70,17 @@ class Header extends React.Component {
                     href={`mailto:urszulakrasny@gmail.com`}
                     type="button"
                     className="btn btn-light"
-                    aria-label="Email"
+                    aria-label="Wyślij email"
                   >
                     <i className="fas fa-envelope"></i>
                   </a>
                   <a
                     type="button"
                     target="blank"
-                    className="btn btn-light mt-lg-4"
+                    className="btn btn-light mx-3 mx-lg-0 mt-lg-4"
                     href="tel:608 658 488"
                     rel="noopener noreferrer"
-                    aria-label="Phone"
+                    aria-label="Zadzwoń"
                   >
                     <i className="fas fa-phone-square-alt"></i>
                   </a>
@@ -88,7 +89,7 @@ class Header extends React.Component {
                     href="https://www.facebook.com/ukrasny"
                     target="blank"
                     rel="noopener noreferrer"
-                    aria-label="Facebook"
+                    aria-label="Przejdź do facebooka"
                   >
                     <i className="fab fa-facebook"></i>
                   </a>

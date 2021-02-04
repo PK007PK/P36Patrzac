@@ -23,7 +23,7 @@ const IndexTextContent = () => (
       // }
       >
         <div className="my-5">
-          <h3>W czym mogę Ci pomóc...</h3>
+          <h2>W czym mogę Ci pomóc...</h2>
           <ul className="list-unstyled d-flex flex-wrap">
             {listing.map((item, index) => (
               <li className="mb-2" key={index}>

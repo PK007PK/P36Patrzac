@@ -2,7 +2,9 @@ import React from "react";
 
 const IndexHeadingTexts = () => (
   <div className="text-center inhexHeader">
-    <h1 class="display-3 mt-5 mt-md-0 inhexHeader__title">Patrząc w słońce</h1>
+    <h1 className="display-3 mt-5 mt-md-0 inhexHeader__title">
+      Patrząc w słońce
+    </h1>
     <div className="border-bottom my-4"></div>
     <p className="lead">
       Nazywam się Urszula Krasny i jestem terapeutką, i counsellorką Gestalt

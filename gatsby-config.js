@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "GPI Usługi Geodezyjne",
-    siteUrl: "https://www.onet.pl",
+    title: `Patrząd w słońce`,
+    description: `Urszula Krasny. Terapeutka i counsellorką Gestalt oraz autorka Talii Ja-Ty. Konsultacje terapeutyczne w gabinecie w Krakowie oraz online.`,
+    siteUrl: `https://slonce.netlify.app/`,
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -49,6 +50,18 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-offline",
     "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Patrząd w słońce`,
+        short_name: `Patrząd w słońce`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#1C2331`,
+        display: `minimal-ui`,
+        icon: `src/images/znak4.svg`,
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
