@@ -70,7 +70,7 @@ const Header = ({
             aria-label="Przełącznik jasny / ciemny motyw"
             type="button"
             className={dark ? "btn btn-warning" : "btn btn-dark"}
-            onClick={changeMode()}
+            onClick={changeMode}
           >
             {dark ? (
               <i className="fas fa-sun"></i>

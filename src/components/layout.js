@@ -1,32 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
 export const PageContext = React.createContext();
 
-const Layout = ({ location, children, style }) => {
-  // state = {
-  //   dark: false,
-  //   changeMode: () => this.changeMode,
-  // };
-
-  const [state, setState] = useState({
-    dark: false,
-    changeMode: () => changeMode,
-  });
-
-  // componentDidMount() {
-  //   this.setState({ dark: this.props.dark === true ? true : false });
-  // }
+const Layout = ({ location, children, isdark }) => {
+  const [dark, setDark] = useState(false);
+  // console.log(location);
+  useEffect(() => setDark(isdark === "true" ? true : false), []);
 
   const changeMode = () => {
-    setState((prevState) => ({ dark: !prevState.dark }));
+    setDark((prevState) => !prevState);
   };
 
-  const { dark } = state;
   return (
-    <PageContext.Provider value={state}>
+    <PageContext.Provider value={{ dark, changeMode }}>
       <div
         className={dark ? "bg-dark" : "bg-light"}
         style={dark ? { color: "rgba(255,255,255,0.7" } : {}}

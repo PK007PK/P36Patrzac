@@ -19,10 +19,10 @@ const IndexPage = ({ data, location }) => {
   const background = data.backgroundImage.childImageSharp.fluid;
   const library = data.libraryImage.childImageSharp.fluid;
   const face = data.face.childImageSharp.fluid;
-
+  console.log(location);
   return (
     <Layout
-      dark={location && location.state && location.state.dark}
+      isdark={location && location.state && location.state.isdark}
       location={location}
     >
       <SEO title="Strona Główna" lang="pl" />

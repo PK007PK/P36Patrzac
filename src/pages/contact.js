@@ -8,7 +8,7 @@ import ContactDetails from "../contentComponents/contactDetails";
 import Map from "../contentComponents/map";
 
 const Contact = ({ location }) => (
-  <Layout dark={location && location.state && location.state.dark}>
+  <Layout isdark={location && location.state && location.state.isdark}>
     <SEO title="Kontakt" lang="pl" />
     <Header
       rightColumnContent={Map}

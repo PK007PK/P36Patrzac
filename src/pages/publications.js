@@ -32,7 +32,7 @@ const Publications = ({ data, location }) => {
 
   return (
     <Layout
-      dark={location && location.state && location.state.dark}
+      isdark={location && location.state && location.state.isdark}
       location={location}
     >
       {" "}
