@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
@@ -26,6 +27,11 @@ const Layout = ({ location, children, isdark }) => {
       </div>
     </PageContext.Provider>
   );
+};
+
+Layout.propTypes = {
+  location: PropTypes.object,
+  isdark: PropTypes.bool,
 };
 
 export default Layout;

@@ -19,7 +19,7 @@ const IndexPage = ({ data, location }) => {
   const background = data.backgroundImage.childImageSharp.fluid;
   const library = data.libraryImage.childImageSharp.fluid;
   const face = data.face.childImageSharp.fluid;
-  console.log(location);
+
   return (
     <Layout
       isdark={location && location.state && location.state.isdark}

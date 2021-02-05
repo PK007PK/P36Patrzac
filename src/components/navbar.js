@@ -10,6 +10,35 @@ const Navbar = () => {
   const { dark } = useContext(PageContext);
   const handleButton = () => toogleExpanded((prevState) => !prevState);
 
+  const pages = [
+    { id: 0, title: "Początek", location: "/" },
+    { id: 1, title: "Publikacje", location: "/publications" },
+    { id: 2, title: "Kontakt", location: "/contact" },
+  ];
+
+  const NavItem = ({ title, location }) => (
+    <li className="nav-item">
+      <Link
+        className="nav-link"
+        state={{ isdark: dark ? true : false }}
+        to={location}
+        activeStyle={
+          dark
+            ? {
+                fontWeight: "bold",
+                color: "rgba(255,255,255,0.7",
+              }
+            : {
+                fontWeight: "bold",
+                color: "black",
+              }
+        }
+      >
+        {title}
+      </Link>
+    </li>
+  );
+
   return (
     <div className={dark ? "container bg-dark" : "container bg-light"}>
       <div
@@ -54,68 +83,13 @@ const Navbar = () => {
             id="navbarNav"
           >
             <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  state={{ isdark: dark ? true : false }}
-                  to="/"
-                  activeStyle={
-                    dark
-                      ? {
-                          fontWeight: "bold",
-                          color: "rgba(255,255,255,0.7",
-                        }
-                      : {
-                          fontWeight: "bold",
-                          color: "black",
-                        }
-                  }
-                >
-                  Początek
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  to="/publications"
-                  tabIndex="-1"
-                  state={{ isdark: dark ? true : false }}
-                  activeStyle={
-                    dark
-                      ? {
-                          fontWeight: "bold",
-                          color: "rgba(255,255,255,0.7",
-                        }
-                      : {
-                          fontWeight: "bold",
-                          color: "black",
-                        }
-                  }
-                >
-                  Publikacje
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  to="/contact"
-                  tabIndex="-1"
-                  state={{ isdark: dark ? true : false }}
-                  activeStyle={
-                    dark
-                      ? {
-                          fontWeight: "bold",
-                          color: "rgba(255,255,255,0.7",
-                        }
-                      : {
-                          fontWeight: "bold",
-                          color: "black",
-                        }
-                  }
-                >
-                  Kontakt
-                </Link>
-              </li>
+              {pages.map((item) => (
+                <NavItem
+                  key={item.id}
+                  title={item.title}
+                  location={item.location}
+                />
+              ))}
             </ul>
           </div>
         </div>

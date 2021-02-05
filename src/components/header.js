@@ -116,8 +116,8 @@ const Header = ({
 
 Header.propTypes = {
   style: PropTypes.object,
-  leftColumnContent: PropTypes.object,
-  rightColumnContent: PropTypes.object,
+  leftColumnContent: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+  rightColumnContent: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   background: PropTypes.object,
   className: PropTypes.string,
 };
