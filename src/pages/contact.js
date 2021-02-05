@@ -1,11 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
+
+// Components
 import Layout from "../components/layout";
-import Header from "../components/header";
 import SEO from "../components/seo";
+import Header from "../components/header";
 
 // Content
-import ContactDetails from "../contentComponents/contactDetails";
 import Map from "../contentComponents/map";
+import ContactDetails from "../contentComponents/contactDetails";
 
 const Contact = ({ location }) => (
   <Layout isdark={location && location.state && location.state.isdark}>
@@ -17,5 +20,9 @@ const Contact = ({ location }) => (
     />
   </Layout>
 );
+
+Contact.propTypes = {
+  location: PropTypes.object,
+};
 
 export default Contact;

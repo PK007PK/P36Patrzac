@@ -12,6 +12,7 @@ import HeadingText from "../contentComponents/publicationsHeadingText";
 
 const Publications = ({ data, location }) => {
   const [posts, setPosts] = useState([]);
+
   useEffect(() => {
     async function loadPosts() {
       const response = await fetch(
@@ -27,6 +28,7 @@ const Publications = ({ data, location }) => {
 
     loadPosts();
   }, []);
+
   const background = data.backgroundImage.childImageSharp.fluid;
   const library = data.libraryImage.childImageSharp.fluid;
 
