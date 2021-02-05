@@ -1,18 +1,18 @@
 import React from "react";
 
-import Layout from "../components/layout";
-import Header from "../components/header";
-import LocalLayout from "../components/localLayout";
-import Divider from "../contentComponents/divider";
-import SEO from "../components/seo";
+import Layout from "../components/Layout";
+import Header from "../components/Header";
+import LocalLayout from "../components/LocalLayout";
+import Divider from "../contentComponents/Divider";
+import SEO from "../components/SEO";
 import Card from "../components/Card";
 
 //Content
-import IndexHeadingTexts from "../contentComponents/indexHeadingTexts";
-import IndexAboutMe from "../contentComponents/indexAboutMe";
-import IndexHowICanHelp from "../contentComponents/indexHowICanHelp";
-import IndexTherapyDetails from "../contentComponents/indexTherapyDetails";
-import Talia from "../contentComponents/cardTalia";
+import IndexHeadingTexts from "../contentComponents/IndexHeadingTexts";
+import IndexAboutMe from "../contentComponents/IndexAboutMe";
+import IndexHowICanHelp from "../contentComponents/IndexHowICanHelp";
+import IndexTherapyDetails from "../contentComponents/IndexTherapyDetails";
+import Talia from "../contentComponents/CardTalia";
 
 const IndexPage = ({ data, location }) => {
   const background = data.backgroundImage.childImageSharp.fluid;

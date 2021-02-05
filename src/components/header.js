@@ -2,8 +2,8 @@ import React, { useState, useContext, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import BackgroundImg from "gatsby-background-image";
-import Logo from "../contentComponents/logo";
-import { PageContext } from "../components/layout";
+import Logo from "../contentComponents/Logo";
+import { PageContext } from "../components/Layout";
 
 const Header = ({
   style,

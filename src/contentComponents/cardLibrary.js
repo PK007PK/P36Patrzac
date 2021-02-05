@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Image from "gatsby-image";
 
-import { PageContext } from "../components/layout";
+import { PageContext } from "../components/Layout";
 
 const CardLibrary = ({ fluid, style }) => {
   const { dark } = useContext(PageContext);

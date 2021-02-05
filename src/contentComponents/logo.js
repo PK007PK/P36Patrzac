@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import logoSvg from "../../static/znak3.svg";
 import logoSvgWhite from "../../static/znak4.svg";
 
-import { PageContext } from "../components/layout";
+import { PageContext } from "../components/Layout";
 
 const Logo = ({ withName, className, style }) => {
   const { dark } = useContext(PageContext);
