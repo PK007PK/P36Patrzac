@@ -6,6 +6,7 @@ import LocalLayout from "../components/localLayout";
 import Divider from "../contentComponents/divider";
 import CardImage from "../components/cardImage";
 import SEO from "../components/seo";
+import Card from "../components/Card";
 
 //Content
 import IndexHeadingTexts from "../contentComponents/indexHeadingTexts";
@@ -40,8 +41,15 @@ const IndexPage = ({ data, location }) => {
         )}
         rightColumnContent={() => (
           <>
-            <CardImage fluid={face} alt="Urszula Krasny" />
-            <CardLibrary style={{ margin: "50px 0" }} fluid={library} />
+            <Card fluid={face} title="Urszula Krasny" alt="Urszula Krasny" />
+            <Card
+              fluid={library}
+              title="Biblioteka Gestalt"
+              alt="Urszula Krasny"
+              link="http://bibliotekagestalt.pl/"
+              style={{ margin: "50px 0" }}
+            />
+
             <Talia style={{ margin: "50px 0" }} />
           </>
         )}
