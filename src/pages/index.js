@@ -4,7 +4,6 @@ import Layout from "../components/layout";
 import Header from "../components/header";
 import LocalLayout from "../components/localLayout";
 import Divider from "../contentComponents/divider";
-import CardImage from "../components/cardImage";
 import SEO from "../components/seo";
 import Card from "../components/Card";
 
@@ -13,7 +12,6 @@ import IndexHeadingTexts from "../contentComponents/indexHeadingTexts";
 import IndexAboutMe from "../contentComponents/indexAboutMe";
 import IndexHowICanHelp from "../contentComponents/indexHowICanHelp";
 import IndexTherapyDetails from "../contentComponents/indexTherapyDetails";
-import CardLibrary from "../contentComponents/cardLibrary";
 import Talia from "../contentComponents/cardTalia";
 
 const IndexPage = ({ data, location }) => {
@@ -60,7 +58,7 @@ const IndexPage = ({ data, location }) => {
 
 export const pageQuery = graphql`
   query {
-    backgroundImage: file(relativePath: { eq: "sun.jpg" }) {
+    backgroundImage: file(relativePath: { eq: "slonce2.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 354) {
           ...GatsbyImageSharpFluid
