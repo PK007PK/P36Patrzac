@@ -61,7 +61,7 @@ const Publications = ({ data, location }) => {
 
 export const pageQuery = graphql`
   query {
-    backgroundImage: file(relativePath: { eq: "publications2.jpg" }) {
+    backgroundImage: file(relativePath: { eq: "lamp.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 354) {
           ...GatsbyImageSharpFluid
