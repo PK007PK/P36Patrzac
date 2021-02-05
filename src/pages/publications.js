@@ -24,6 +24,7 @@ const Publications = ({ data, location }) => {
       }
 
       const posts = await response.json();
+      posts.length = 3;
       setPosts(posts);
     }
 
@@ -48,6 +49,14 @@ const Publications = ({ data, location }) => {
         rightSize="3"
         leftColumnContent={() => (
           <>
+            {" "}
+            {posts.length === 0 ? (
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                  <span class="">Loading...</span>
+                </div>
+              </div>
+            ) : null}
             {posts.map((post, index) => (
               <CardPost className="mb-5" post={post} key={index} />
             ))}
