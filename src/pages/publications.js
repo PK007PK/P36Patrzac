@@ -35,10 +35,7 @@ const Publications = ({ data, location }) => {
   const library = data.libraryImage.childImageSharp.fluid;
 
   return (
-    <Layout
-      isdark={location && location.state && location.state.isdark}
-      location={location}
-    >
+    <Layout isdark={location?.state?.isdark} location={location}>
       {" "}
       <SEO title="Publikacje" lang="pl" />
       <Header background={background} leftColumnContent={HeadingText} />
@@ -51,9 +48,13 @@ const Publications = ({ data, location }) => {
           <>
             {" "}
             {posts.length === 0 ? (
-              <div class="d-flex justify-content-center">
-                <div class="spinner-border" role="status">
-                  <span class="">Loading...</span>
+              <div className="d-flex justify-content-center">
+                <div
+                  className="spinner-border"
+                  style={{ width: "3rem", height: "3rem" }}
+                  role="status"
+                >
+                  <span className="visually-hidden">Loading...</span>
                 </div>
               </div>
             ) : null}

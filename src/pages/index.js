@@ -20,10 +20,7 @@ const IndexPage = ({ data, location }) => {
   const face = data.face.childImageSharp.fluid;
 
   return (
-    <Layout
-      isdark={location && location.state && location.state.isdark}
-      location={location}
-    >
+    <Layout isdark={location?.state?.isdark} location={location}>
       <SEO title="Strona Główna" lang="pl" />
       <Header background={background} leftColumnContent={IndexHeadingTexts} />
       <Divider />
