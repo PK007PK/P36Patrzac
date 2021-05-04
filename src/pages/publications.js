@@ -7,6 +7,7 @@ import LocalLayout from "../components/LocalLayout";
 import CardPost from "../components/CardPost";
 import Divider from "../contentComponents/Divider";
 import SEO from "../components/SEO";
+import { api, endpoints } from '../api';
 
 // Data
 import HeadingText from "../contentComponents/PublicationsHeadingText";
@@ -14,22 +15,34 @@ import HeadingText from "../contentComponents/PublicationsHeadingText";
 const Publications = ({ data, location }) => {
   const [posts, setPosts] = useState([]);
 
+  // useEffect(() => {
+  //   async function loadPosts() {
+  //     const response = await fetch(
+  //       "http://bibliotekagestalt.pl//wp-json/wp/v2/posts"
+  //     );
+  //     if (!response.ok) {
+  //       return;
+  //     }
+
+  //     const posts = await response.json();
+  //     posts.length = 3;
+  //     setPosts(posts);
+  //   }
+
+  //   loadPosts();
+  // }, []);
+
   useEffect(() => {
-    async function loadPosts() {
-      const response = await fetch(
-        "http://bibliotekagestalt.pl//wp-json/wp/v2/posts"
-      );
-      if (!response.ok) {
-        return;
-      }
-
-      const posts = await response.json();
-      posts.length = 3;
-      setPosts(posts);
-    }
-
-    loadPosts();
-  }, []);
+    api.get(endpoints.posts)
+      .then(({ data }) => {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        if (data.length > 3) {data.length = 3};
+        setPosts(data)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [])
 
   const background = data.backgroundImage.childImageSharp.fluid;
   const library = data.libraryImage.childImageSharp.fluid;
@@ -71,7 +84,7 @@ const Publications = ({ data, location }) => {
 
 export const pageQuery = graphql`
   query {
-    backgroundImage: file(relativePath: { eq: "lamp.jpg" }) {
+    backgroundImage: file(relativePath: { eq: "sun.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 354) {
           ...GatsbyImageSharpFluid

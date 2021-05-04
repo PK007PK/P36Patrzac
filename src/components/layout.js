@@ -8,6 +8,8 @@ export const PageContext = React.createContext();
 
 const Layout = ({ location, children, isdark }) => {
   const [dark, setDark] = useState(false);
+  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => setDark(isdark), []);
 
   const changeMode = () => {
