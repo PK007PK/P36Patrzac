@@ -21,7 +21,6 @@ const Layout = ({ location, children, isdark }) => {
         style={dark ? { color: "rgba(255,255,255,0.7" } : {}}
       >
         <Navbar location={location} />
-
         {children}
         <Footer />
       </div>

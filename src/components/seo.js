@@ -4,21 +4,20 @@ import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
 const SEO = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-          }
-        }
-      }
-    `
-  );
+  // const data = useStaticQuery(graphql`
+  //     query {
+  //       site {
+  //         siteMetadata {
+  //           title
+  //           description
+  //         }
+  //       }
+  //     }
+  //   `
+  // );
 
-  const metaDescription = description || site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata?.title;
+  // const metaDescription = description || data.site.siteMetadata.description;
+  // const defaultTitle = data.site.siteMetadata?.title;
 
   return (
     <Helmet
@@ -26,19 +25,19 @@ const SEO = ({ description, lang, meta, title }) => {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      // titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          // content: metaDescription,
         },
         {
           property: `og:title`,
-          content: title,
+          // content: title,
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          // content: metaDescription,
         },
         {
           property: `og:type`,
@@ -54,9 +53,9 @@ const SEO = ({ description, lang, meta, title }) => {
 };
 
 SEO.defaultProps = {
+  description: ``,
   lang: `en`,
   meta: [],
-  description: ``,
 };
 
 SEO.propTypes = {
