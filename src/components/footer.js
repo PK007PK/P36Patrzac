@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import LocalLayout from "./LocalLayout";
+import LocalLayout from "./localLayout";
 import { PageContext } from "../components/layout";
 
 const Footer = () => {
