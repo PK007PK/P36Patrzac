@@ -50,7 +50,7 @@ const Publications = ({ data, location }) => {
   return (
     <Layout isdark={location?.state?.isdark} location={location}>
       {" "}
-      <SEO title="Publikacje" lang="pl" />
+      <SEO title="Publikacje" lang="pl" description="`Urszula Krasny. Publikacje. Terapeutka i counsellorką Gestalt oraz autorka Talii Ja-Ty. Konsultacje terapeutyczne w gabinecie w Krakowie oraz online"/>
       <Header background={background} leftColumnContent={HeadingText} />
       <Divider />
       <LocalLayout

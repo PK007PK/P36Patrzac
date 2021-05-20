@@ -12,7 +12,7 @@ import ContactDetails from "../contentComponents/ContactDetails";
 
 const Contact = ({ location }) => (
   <Layout isdark={location?.state?.isdark}>
-    <SEO title="Kontakt" lang="pl" />
+    <SEO title="Kontakt" lang="pl" description="`Urszula Krasny. Kontakt. Terapeutka i counsellorką Gestalt oraz autorka Talii Ja-Ty. Konsultacje terapeutyczne w gabinecie w Krakowie oraz online"/>
     <Header
       rightColumnContent={Map}
       leftColumnContent={ContactDetails}

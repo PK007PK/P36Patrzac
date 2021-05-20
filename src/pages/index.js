@@ -21,7 +21,7 @@ const IndexPage = ({ data, location }) => {
 
   return (
     <Layout isdark={location?.state?.isdark} location={location}>
-      <SEO title="Strona Główna" lang="pl" />
+      <SEO title="Strona Główna" lang="pl" description="`Urszula Krasny. Terapeutka i counsellorką Gestalt oraz autorka Talii Ja-Ty. Konsultacje terapeutyczne w gabinecie w Krakowie oraz online"/>
       <Header background={background} leftColumnContent={IndexHeadingTexts} />
       <Divider />
       <LocalLayout
