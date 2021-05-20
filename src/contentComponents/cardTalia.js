@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import logowhite from "../images/znakwhite.svg";
 
-import { PageContext } from "../components/Layout";
+import { PageContext } from "../components/layout";
 
 const Talia = () => {
   const { dark } = useContext(PageContext);

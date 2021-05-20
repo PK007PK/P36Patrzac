@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 
-import Layout from "../components/Layout";
-import Header from "../components/Header";
-import CardLibrary from "../contentComponents/CardLibrary";
-import LocalLayout from "../components/LocalLayout";
-import CardPost from "../components/CardPost";
-import Divider from "../contentComponents/Divider";
-import SEO from "../components/SEO";
+import Layout from "../components/layout";
+import Header from "../components/header";
+import CardLibrary from "../contentComponents/cardLibrary";
+import LocalLayout from "../components/localLayout";
+import CardPost from "../components/cardPost";
+import Divider from "../contentComponents/divider";
+import SEO from "../components/seo";
 import { api, endpoints } from '../api';
 
 // Data
-import HeadingText from "../contentComponents/PublicationsHeadingText";
+import HeadingText from "../contentComponents/publicationsHeadingText";
 
 const Publications = ({ data, location }) => {
   const [posts, setPosts] = useState([]);

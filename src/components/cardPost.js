@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 
-import { PageContext } from "../components/Layout";
+import { PageContext } from "../components/layout";
 
 const CardPost = ({ post, className }) => {
   const { dark } = useContext(PageContext);

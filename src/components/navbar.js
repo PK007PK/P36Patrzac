@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 
-import Logo from "../contentComponents/Logo";
+import Logo from "../contentComponents/logo";
 import { Link } from "gatsby";
 
-import { PageContext } from "../components/Layout";
+import { PageContext } from "../components/layout";
 
 const Navbar = () => {
   const [isExpanded, toogleExpanded] = useState(0);

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import LocalLayout from "./LocalLayout";
-import { PageContext } from "../components/Layout";
+import { PageContext } from "../components/layout";
 
 const Footer = () => {
   const { dark } = useContext(PageContext);

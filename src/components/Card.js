@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Image from "gatsby-image";
 import PropTypes from "prop-types";
 
-import { PageContext } from "../components/Layout";
+import { PageContext } from "../components/layout";
 
 const Card = ({ fluid, style, className, title, link, alt }) => {
   const { dark } = useContext(PageContext);

@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // Components
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
-import Header from "../components/Header";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Header from "../components/header";
 
 // Content
-import Map from "../contentComponents/Map";
-import ContactDetails from "../contentComponents/ContactDetails";
+import Map from "../contentComponents/map";
+import ContactDetails from "../contentComponents/contactDetails";
 
 const Contact = ({ location }) => (
   <Layout isdark={location?.state?.isdark}>
